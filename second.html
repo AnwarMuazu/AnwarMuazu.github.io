@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/w3.css" type="text/css">
+    <title>Business STORES</title>
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/solid.css">
+    <style>
+        *::selection {
+            color: red;
+        }
+        div {
+            margin-bottom: -25px;
+            
+        }
+        input {
+            box-shadow: 1px 2px  black;
+        }
+        * {
+            margin-left: 3%;
+            margin-right: 3%;
+            padding-left: 10px;
+        }
+        
+        th {
+            color: red;
+        }
+        #close {
+            background-color: transparent;
+            border: none;
+            font-size: x-large;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+           
+        }
+     
+       .flex-container {
+            display: flex;
+            background-size: 40%;
+            font-size: 20px;
+       }
+       .flex-container>div {
+            background-color: transparent;
+            width: 70px;
+            margin: 1px;
+            text-align: center;
+            line-height: 10px;
+            font-size: 12px;
+       }
+      #close:hover {
+          background-color: red;
+          color: white;
+      }
+      #prog {
+            background: conic-gradient(rgb(199, 12, 152) 0.0deg, rgba(243, 243, 245) 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20px;
+            width: 40px;
+            border-radius: 10%;
+            box-shadow: 6px 6px 10px -1px rgba(200, 200, 200, 1.15);
+        }
+        .w3-display-topright {
+            position: var(600px);
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body >
+    <div class="flex-container" id="flex" style="background-color: rgb(204, 200, 200); border-style: groove; border-color: blue; border-bottom: none; box-shadow: 2px 2px 2px 2px  rgb(129, 95, 95); height: 4.4vw; font-size: 2vw; ">
+    <i class="brands fas fa-donate" style="padding-left: 18vw; color: red;"></i>
+    <b>YANAYI STORES LIMITED</b><span style="flex-grow: 3;"></span>
+    <span id="close" class="w3-display-topright" title="close" style="transform: translate(34px); padding-left: 11px;">&times;</span>
+    </div>
+
+    <div style="background-color: rgb(48, 135, 250); border-style: groove; border-color: blue; border-bottom: none;  box-shadow: 2px 2px 2px 2px  rgb(129, 95, 95);">Customer Details<hr style="background-color: black; height: 0.05vw;width: 70vw;">
+    <br>Customer Name: <input id="real" type="text" style="width: 15vw; height: 15px; margin-bottom: 5px; text-align: left; height:20px; border: none; border-radius: 3px;">
+     <button onclick="save()" style="background-color: black; color: white; border-style: groove; border-color: blue;">save</button> Contact:<input type="number" id="cont"
+    style="width: 15vw; height: 1vw; margin-bottom: 5px;  height:20px; border: none; border-radius: 3px;"></div>
+    <div class="d-flex" style="background-color: rgb(204, 200, 200); border-style: groove; border-color: blue; border-top: none; margin-top: 25px; font-size: 1vw;  box-shadow: 2px 2px 2px 2px  rgb(129, 95, 95); height: 30px; " >
+        <form id="priceCalculatorForm">
+            <label for="itemSelect">Select Item:</label>
+            <select id="itemSelect" name="itemSelect"  style="width: 20%; border-radius: 3px; box-shadow: 1px 1px #100;">
+                <option value="">Select an item</option>
+                <option value="Cherie indomie">Cherrie indomie</option>
+                <option value="Spaghetti">Spaghetti</option>
+                <option value="Tomatoe rice">Tomatoe rice</option>
+                <option value="Peak milk">Peak milk</option>
+                <option value="Rufaidah yoghurt">Rufaidah yoghurt</option>
+                <option value="Semovita">Semovita</option>
+                <option value="Purebliss">Purebliss Biscuite</option>
+                <option value="Couscous">Couscous</option>
+               
+            </select>
+            <label for="quantityInput">Quantity:</label>
+            <input type="number" id="quantityInput" name="quantityInput" min="1" style="width: 15vw; height:15px; border-radius: 3px; margin-top:2px; border-color: black;">
+
+            <button type="button" id="calculateButton" style="border-color: blue;">Calculate Total</button>
+            <!-- Payment:<input type="checkbox"> -->
+    </div>
+    <div  id="print" style="margin-top: 20px; background-color: white;  border-right-color: blue;
+    border-top-style: groove; border-top-color:  blue; box-shadow:  2px 2px 4px  rgb(129, 95, 95);
+
+    border-right-style: groove; border-right-color:  blue;  border-bottom-style: groove; border-bottom-color: blue;
+
+    border-left-color: blue;  border-left-style: groove;">
+
+        <table style="width:80%; margin-left: 5%; font-size: 1.2vw;  ">
+            <tr>
+                <th>GOODS</th>
+                <th style="transform: translate(-45%);">PRICE</th>
+            </tr>
+            <tr>
+                <td>Cherrie Indomie</td>
+                <td>$10,000.00</td>
+            </tr>
+            <tr>
+                
+                <td>Spaghetti</td>
+                <td>$8,000.00</td>
+            </tr>
+            <tr>
+               
+                <td>Tomatoe Rice</td>
+                <td>$60,000.00</td>
+            </tr>
+            <tr>
+                
+                <td>Peak milk</td>
+                <td>$9500.00</td>
+            </tr>
+            <tr>
+                
+                <td>Rufaidah yoghurt</td>
+                <td>$7000.00</td>
+            </tr>
+            <tr>
+                
+                <td>Semovita</td>
+                <td>$6000.00</td>
+            </tr>
+            <tr>
+               
+                <td>Purebliss Biscuite</td>
+                <td>$4500.00</td>
+            </tr>
+            <tr>
+               
+                <td>Couscous</td>
+                <td>$9000.00</td>
+            </tr>
+            
+        </table>  <br><br><br><br><br><br><br> 
+        
+       
+             <div id="show" class="d-flex" style=" width:90%; height: 70%; margin-left: 5%; margin-right: 30%; font-size: 1.2vw; background-color: rgb(204, 200, 200);
+             box-shadow: 2px 2px 2px 2px  rgb(129, 95, 95); transform: translateY(-40%);"><br>
+             
+             NAME:<button id="main" type="text" style="width: 15vw; height: 20px; text-align: left; "></button>
+             Contact:<button id="contact" style=" width: 15vw; height: 20px; text-align: left;"></button><br><br>
+
+               <form  action="save.py" method="POST" class="p-3">Payment Type:
+                     <select  class="form-control mb-2"> 
+                    <option value="CASH">CASH</option>
+                    <option value="TRANSFER">TRANSFER</option></select></form><span id="hamdi" style="color: red;"></span>
+                    <button id="demo" class="w3-hide" style="color: blue; background-color: white; border-color: blue;">Item:
+                    </button> <button id="quantity" class="w3-hide" style="color: blue; background-color: white; border-color: blue;">Quantity</button><br>
+                    <span id="totalprice" style="color: black; font-size: 1.5vw;">Total price:$0.00</span>
+
+                  payment:<button  type="button"  style="color: red;  font-size: 0.9vw; margin-top: -100px;"  id='control1' onclick="move1('prb')">Pay</button>
+                <div class="progress-bar progress-bar-striped progress-bar-animated" id="prb" style="width:0%; color: #100;">
+               </div>
+            </div>     
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('close').addEventListener('click', function() {
+        x = confirm('Are you sure you want to close this page');
+        if (x===true) {
+            window.close()
+        } else {
+            return;
+        }
+    })
+   
+
+    function save() {
+        var cont = document.getElementById('cont').value;
+        var real = document.getElementById('real').value;
+        var capital = real.toUpperCase()
+        var main = document.getElementById('main').innerHTML = capital;
+        var contact = document.getElementById('contact').innerText = cont;
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+            // Prices of the items
+            var itemPrices = {
+                'Cherie indomie': 10000,
+                'Spaghetti': 8000,
+                'Tomatoe rice': 60000,
+                'Peak milk': 9500,
+                'Rufaidah yoghurt': 7000,
+                'Semovita': 6000,
+                'Purebliss' : 4500,
+                'Couscous' : 9000,
+                
+            }
+    
+         // Event listener for the button click
+         document.getElementById('calculateButton').addEventListener('click', function() {
+                // Get selected item and quantity
+                var selectedItem = document.getElementById('itemSelect').value;
+                var quantity = parseInt(document.getElementById('quantityInput').value);
+                
+                // Validate input
+                if (!selectedItem || isNaN(quantity) || quantity <= 0) {
+                    alert('Please select an item and enter a valid quantity.');
+                    return;
+                }
+                // Calculate total price
+                var totalprice = itemPrices[selectedItem] * quantity;
+
+                document.getElementById('demo').innerText = 'Item = ' + selectedItem;
+               
+                document.getElementById('quantity').innerText = 'quantity = ' + quantity;
+
+               
+                // Display the total price
+                document.getElementById('totalprice').innerText = 'Total Price: $' + totalprice.toFixed(2);
+          });
+        });
+    
+        function move1(n) {
+            const x = document.getElementById(n);
+            let width = 0;
+            const st = setInterval(move, 45);
+
+        document.getElementById('control1').setAttribute('class','w3-hide')
+        function move() {
+
+        if (width === 100) {
+            x.innerHTML = 'Approved';
+            clearInterval(st)
+            // alert('Dear customer you have successfully purchase \n goods from yanayi stores, thank you')
+        
+        } else {
+            width++;
+            x.style.width = width + "%";
+            x.innerHTML = width + "%";
+        }
+
+        }
+    }
+        
+
+        const myInterval = setInterval(myTimer, 1000); // delay set to 1 second
+
+        function myTimer() {
+            const date = new Date();
+            document.getElementById("hamdi").innerHTML = date.toLocaleTimeString();
+        }
+
+        function myStopFunction() {
+            clearInterval(myInterval);
+           
+        }
+        
+
+        function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.substring(1);
+    const paramPairs = queryString.split('&');
+    for (const pair of paramPairs) {
+        const [key, value] = pair.split('=');
+        params[decodeURIComponent(key)] = decodeURIComponent(value);
+    }
+    return params;
+}
+ 
+</script>
+
+</body>
+
+</html>

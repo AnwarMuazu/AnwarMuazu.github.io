@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html">
+    <title>Login</title>
+    <link rel="styleshee" type="text/javaScript" href="W3schools.js">
+    <link href="/bootstrap-5.3.3-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/brands.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/solid.css">
+
+    <style>
+        *::selection {
+            color: green;
+        }
+        /* body {
+background: repeating-radial-gradient(blue,pink
+40%, red 11%, transparent 0%,
+     transparent 50%),
+  repeating-conic-gradient(red 10%, rgb(121, 121, 117)
+  20%, transparent 50%,
+       transparent 10%),
+       radial-gradient(
+           violet,
+           violet 30%,
+           transparent 40%,
+           transparent 100%
+       ),floralwhite;
+
+background-size: 
+    6em 6em,
+    1em 1em,
+    2em 2em;
+
+background-blend-mode: overly;
+background-position: 
+    0% 0%,
+    -33% -33%,
+    -200% -200%;} */
+       form {
+           box-shadow: 2px 5px 5px 5px rgb(102, 101, 101);
+           border-radius: 5% 5%;
+           margin-top: 4%;
+       }
+          
+       input {
+        width:250px;
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 5px;
+        border: 0px solid #ccc;
+       
+        font-size: 13px;
+       }
+       #draw {
+           width: 120px;
+           height: 40px;
+           color: white;
+          
+       }
+       #exit {
+        width: 110px;
+        height: 40px;
+        border-width: 2px;
+        margin-right: 15px;
+       }
+       #exit:hover {
+         color: #ffff;
+         background-color: #000000;
+       }
+       #draw:hover {
+           color: #f00;
+           background-color: lightblue;
+       }
+       #myconfirm {
+           width: 260px;
+       }
+     
+    </style>
+    
+    
+</head>
+
+<body id="me" style=" font-family: Verdana; ">
+    
+    <form style="background-color: rgb(199, 194, 194); margin-left: 37%; margin-right: 37%; text-align: center; ">
+        <button style="color: white; background-color: black;font-size: 20px; text-align: center; width: 280px; 
+        height: 40px; border: none; border-radius: 10px; margin-top: 3px;">LogIn</button>
+        <br>
+        <h1 style="font-family: Verdana; text-align: center; color: red;">Welcome!</h1>
+        <h3  style="font-family: fantasy;">To</h3>
+    <h5><i> <i class="brands fas fa-donate" style="color: rgb(51, 1, 51);; font-size: 30px;"></i>YANAYI STORES LIMITED</i></h5>
+   
+        <input type="text" id="Google" 
+        placeholder="User Name" style="width: 260px;">
+        <br />
+        <br />
+       
+        <input type="email"  id="Email" placeholder="Email" style="width: 260px;">
+        <br />
+        <br />
+        <!-- <input type="password" placeholder="Enter Password"   id="myInput">
+        <br><br> -->
+        <input type="password" placeholder="confirm Password"   id="myconfirm" style= 'margin-left: 30px;'>
+        
+        <i id="eye" title="show password" class="fa fa-eye" style="font-size: 12px;  padding-top: 10px; transform: translate(-27px, 4px); width: 30px; height: 30px; margin-left: -8px;
+        color: rgb(59, 59, 59); border-top-right-radius: 5px; border-bottom-right-radius: 5px;" onclick="myFunction()"></i>
+        <hr />
+           <span class="d-flex" style="margin-left: 20px; justify-content: space-around;">
+        <input id="draw" type="button" value="Login"  style=" background-color: rgb(51, 1, 51); border-radius: 10px;">
+        <input id="exit" type="button" value="Exit"  class="w3-button w3-black" style="border-radius: 10px; border-color: black;">
+        </input></span>
+        <br />
+        <br />
+        <p><a href="Terms.html"  style="color: black;">Terms and Conditions</a>    
+            <a href="www.google.com"><i id="google" class="fa-brands fa-google-plus" title="continue with Google" style="color: red; font-size: 30px; justify-content: left;"></i></a></p><br><br>
+        </form>
+       
+       
+    <script>
+        function myFunction()  {
+            var a = document.getElementById('eye')
+            // var x = document.getElementById("myInput");
+            var x = document.getElementById('myconfirm')
+            if (x.type === "password") {
+                // x.type = "text";
+                x.type = "text";
+                a.title='Hide password'
+                a.className = 'fa fa-eye-slash'
+               
+               
+            } else {
+                // x.type = "password";
+                x.type = "password"
+                a.className = 'fa fa-eye'
+                a.title = 'show password'
+               
+            }
+        }
+
+  
+    document.getElementById('draw').addEventListener('click', function() {
+    const google = document.getElementById('Google').value;
+    const email = document.getElementById('Email').value;
+    // const myinput = document.getElementById('myInput').value;
+    const myconfirm = document.getElementById('myconfirm').value;
+
+    if (!google||!email) {  //conditions
+        alert('Please fill out all the available fields.'); //Tax
+        return;
+    }
+    if (!myconfirm) {
+        alert('Please insert a Password')
+        return;
+    }
+    if (myconfirm != (2468)) {   //conditions
+        alert('Wrong Password');    //Tax
+        return;
+     
+    }else {
+        document.getElementById('draw').style.cursor='progress'
+        window.location.href = 'second.html'
+    }
+});
+document.getElementById('exit').addEventListener('click', function(){
+        x = confirm('Are you sure you want to Exit');
+        if (x===true) {
+            window.close()
+        } else {
+            return;
+        }
+   
+    })
+
+    </script>
+</body>
+</html>
