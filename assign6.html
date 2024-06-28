@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/w3.css" type="text/css">
+    <title>Car Company</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/brands.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/solid.css">
+
+<style>
+    *::selection {
+            color: red;
+        }
+   
+    button {
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+        i {
+            color: white;
+        }
+      
+        input::placeholder {
+            color: green;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: green;
+            cursor: pointer; 
+            
+         }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p{
+            text-size-adjust: bolder;
+        }
+        .form {
+           box-shadow: 2px 5px 5px 5px rgb(102, 101, 101);
+           border-radius: 5% 5%;
+           margin-top: 10%;
+       }
+       #draw:hover {
+           color: red;
+           cursor: pointer;
+           background-color: lightblue;
+          
+       }
+       #form {
+        box-shadow: 4px 4px #ccc;
+       }
+       #twi:hover {
+           font-size: 25px;
+       }
+       #ins:hover {
+           font-size: 25px;
+       }
+       #tel:hover {
+           font-size: 25px;
+       }
+       #face:hover {
+           font-size: 25px;
+       }
+    th {
+        position: sticky;
+        top:20px;
+    }
+    legend {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div>
+        <span id="stick">
+            <header id="header" class="d-flex flex-wrap justify-content-between align-items-center bg-primary-subtle" 
+            style="background-image: linear-gradient(to right, green, rgb(200, 255, 0), rgb(245, 111, 111)); text-align: center;">
+                <a><button>About Us</button> 
+                <button>Advertise with us</button> <button>Contact Us</button>
+            <p id="demo"></p></a>
+                <div class="d-flex flex-wrap gap-3" style="margin-right: 100px; font-size: large;">
+                <a href="www.facebook.com" style="cursor:pointer; position: relative;"><i class="fa-brands fa-facebook"></i></a>
+                <a href="www.twitter.com" style="cursor:pointer;"><i class="fa-brands fa-twitter"></i></a>
+                <a href="www.instagram.com" style="cursor:pointer;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="www.whatsapp.com" style="cursor:pointer;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="www.bluetooth.com" style="cursor:pointer;"> <i class="fa-brands fa-bluetooth"></i></a></div></header>
+        </span>
+    </div>
+    
+    <div style="padding-left: 40px;"  class="d-flex" id="home">
+            <b><p style="font-size:5vw; color: green; text-shadow: 2px 2px 2px yellow;">Golden<sup style="font-size: 25px; color: red; text-shadow: none;">Motors</sup></p></b>
+            <input  id="text" type="search" placeholder="search..." style="width: 40vw; height:3vw; margin-top: 45px; margin-left: 20px;">
+            <i id="searchbutton" onclick="move()" class="fa-solid fa-magnifying-glass" style="color: white; background-color: green; width: 5vw; height: 3vw; margin-top: 45px; margin-left: -1px; padding-top: 11px; 
+             text-align: center;cursor: pointer; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" title="search"></i>
+            <button onclick="document.getElementById('id01').style.display='block'"  style="background-color: transparent; font-size: large; margin-left: 15vw; color: black;">&#9776;</button>
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content" style=" margin-left:-10px; width: 25vw; margin-top: -55px; height: 35rem;  font-weight: bolder;">
+                    <div class="w3-container" >
+                        <span id="place" onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <div class="d-flex">
+                        <input id="search" type="search" placeholder="search" style="width: 22vw; height: 2vw; margin-left: 10px; font-weight: lighter; transform: translateY(45px);">
+                        <span id="glass" value="enter" class="fa-solid fa-magnifying-glass" style="color: white; background-color: green; width: 3vw; height: 2vw; margin-top: 45px; margin-left: -1px; padding-top: 8px; padding-left: 7px;font-size: 10px;">
+                        </span><br><br><br><br></div>
+                        <p><a href="#home">Home</a></p><br>
+                        <p>News</p><br>
+                        <a href="#image"><p>Images</p></a><br>
+                        <a href="#video"><p>videos</p></a><br>
+                        <a href="#form"><p>form</p></a><br><br><br><footer>
+                        <div class="d-flex" style="color: red;  border: none; font-size: 20px;" >
+                            <i id="face" class="fa-brands fa-facebook" style="color: red; margin-left: 10px;" onclick="alert('this is our facebook site plaase 0908675647564')" ></i>
+                                    <i id="twi" class="fa-brands fa-twitter" style="color: black ; margin-left: 20px; "></i>
+                                    <i id="ins" class="fa-brands fa-instagram" style="color: red;margin-left: 20px; "></i>
+                                    <i id="tel" class="fa-brands fa-telegram-plane" style="color: blue; margin-left:20px; "></i>
+                                    <link href="www.google.com"><i title="continue with Google" class="fa-brands fa-google-plus" style="color: red; margin-left: 50px; font-size: 60px; margin-bottom: -10px; cursor: help;"></i>
+                                    </a></i>
+                                    </div></footer>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+    </div>
+    <div>
+        <div style="  border-bottom: green;">
+            <strong><span class="d-flex" style="padding-left: 5vw; justify-content: space-evenly; border-bottom: groove; box-shadow: 2px rgb(88, 87, 87);" id="menu" >
+            <a href="#"><p onclick="alert('YOU ARE AT THE HOME PAGE PLAEASE')" style="cursor:pointer;">Home</p></a>
+            <form action="save.py" method="POST" class="p-3" style="border-color: red;">
+                <select  class="form-control mb-2" style="color: black; border: none; margin-top: -20px;">
+                <option value="#" >News</option>
+                <option value="#close" style="background-color: black; color: white;">newUpdate</option>
+                <option value="#"style="background-color:  black; color: white;">LatestVasion</option>
+            </select>
+            </form><a href="#video"><p>VIDEOS</p></a><a href="#image"><p>Images</p></a><a href="#form"><p>ORDER NOW</p></a><p>Technology</p></strong></span>
+        </div>
+    </div>
+    <div style="padding-left: 10vw;">
+        <span style="font-size: 5vw;"><b style="color: green;">Golden Motors</b> WORLD-WIDE GUARANTEED CAR COMPANY</span><br><br>
+        <img src="/images/imageF.jpg" style="width: 55vw;height: 40vw; ">
+    </div><br><br><br><br><br><br><br><br><br>
+
+    <div value="a" id="image" style="justify-content: space-around; margin-left: 5vw; padding-right: 30px;">
+        <h3>IMAGES</h3><a href="#header"><b><p>HOME</p></b></a>
+        <img src="/images/imageA.jpg" style="width: 20vw;height: 10vw;">
+        <img src="/images/imageB.jpg" style="width: 20vw;height: 10vw;">
+        <img src="/images/imageC.jpg" style="width: 20vw;height: 10vw;">
+        <img src="/images/imageD.jpg" style="width: 20vw;height: 10vw;"><br><br><br><b><div class="d-flex" style="justify-content: space-around;">
+        <p>LATEST GOLF: publish this<br>year<br>PRICE:<del>$50,000000</del> $60,000000</p>
+        <p>BULLET TROOF: publish this<br>year<br>PRICE: $200,000,000</p>
+        <p>FERRARI: publish this<br>year<br>PRICE:<del>$50,000000</del> $100,000,000</p>
+        <p>LUXIRIOUS: publish this<br>year<br>PRICE: $600,000,000</p><br>Made with diamond
+        </div></b>
+        <div  style="justify-content: space-around; margin-left: 5vw; padding-right: 30px;">
+        <img src="/images/imageE.jpg" style="width: 20vw;height: 10vw;">
+        <img src="/images/imageF.jpg" style="width: 20vw;height: 10vw;">
+        <img src="/images/imageG.jpg" style="width: 20vw;height: 10vw;"><br><br><br><strong><div class="d-flex" style="padding-left: 20px;">
+        <p>LATEST GOLF: publish this<br>year<br>PRICE:<del>$50,000000</del> $60,000000</p>
+        <p  style="padding-left: 40px;">BULLET TROOF: publish this<br>year<br>PRICE: $200,000,000</p>
+        <p  style="padding-left: 40px;">FERRARI: publish this<br>year<br>PRICE:<del>$50,000000</del> $100,000,000</p></div></strong>
+    </div></div>
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <h3 value="b" id="video">VIDEOS</h3><b><p> <a href="#header">HOME</a></p></b><br><div class="d-flex">
+    <video controls width="400px" height="200px"> <!--autoplay muted-->
+        <source style="text-align: center; size-adjust: 400px;" src="/videos/videoa.mp4" type="video/mp4"></video>
+       <p style="padding-left: 10px;"> Golden motorscar dribling on<br>the sahara desert.</p>
+
+    <video controls width="400px" height="200px"> <!--autoplay muted-->
+        <source style="text-align: center; size-adjust: 400px;" src="/videos/videob.mp4" type="video/mp4"></video>
+       <p style="padding-left: 10px;"> Golden motorscar dribling on<br>the sahara desert.</p><br><br><br>
+
+       <video controls width="400px" height="200px"> <!--autoplay muted-->
+        <source style="text-align: center; size-adjust: 400px;" src="/videos/videoc.mp4" type="video/mp4"></video>
+       <p style="padding-left: 10px;"> Golden motorscar dribling on<br>the sahara desert.</p></div><br><br>
+
+       <div style="text-align: center;">
+        <video controls width="500px" height="250px">
+            <source  src="/videos/videod.mp4" type="video/mp4"></video>
+            <p style="padding-left: 10px;">Golden motorscar moving<br>on comboi</p>
+        </div><br><br>
+
+        
+        <a href="#header"><b><p style="padding-left: 30px; transform: translate(10%, 500%); text-decoration: none;">HOME</p></b></a>
+        
+        <form id="form" action="save.py" method="post" style="margin-right: auto; margin-left: auto; width: 55%; background-image: url(/images/imageB.jpg); background-repeat: no-repeat; background-attachment: transparent;background-size: cover; color: #fff; height: 30%;">
+            <fieldset style="border:2px solid rgb(221, 39, 6); ">
+                <legend style="background-color: #000;  border-radius: 5px; color: white; font-size: 20px;"><b>CAR APPLICAION FORM</b></legend><br>
+                <label for="fname"><b>First name:</b></label><br>
+                <input type="text" id="fname" name="fname" style="width:35% ; size: 60px; margin-left: 10px;"><br>
+                
+                <label for="lname"><b>Last name:</b></label><br>
+                <input type="text" id="lname" name="lname"  style="width:35%;  size: 60px; margin-left: 10px;"><br>
+    
+                <label for="phone no."><b>Phone number:</b></label><br>
+                <input type="number" id="phone no." name="phone no." style="width:35%;  size: 30px; margin-left: 10px;"><br>
+    
+                <label for="gender"><b>gender:</b></label><br><br>
+                <select id="gender" name="gender" style="width: 30%;">
+                    <option value="male" style="background-color: transparent;">male</option>
+                    <option value="female">female</option>
+                </select>
+                <br><br>
+                <label for="date"><b>Date:</b></label><br>
+                <input type="date" id="date" name="date" style="width: 30%; height: 10%;"><br>
+                <label for="cars"><b>choose a car:</b></label><br>
+                <select id="cars" name="cars"style="width: 20%">
+                    <option  value="Toyota">Toyota</option>
+                    <option value="Golf">Golf</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Peagout">Peagout</option>
+                    <option value="Banz">Benz</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Matrix">Matrix</option>
+                    <option value="BMW">BMW</option>
+                </select>
+                <input style="width: 30%;" type="reset">
+                <br><br>
+                <div style="text-align: center;">
+                    <input type="submit" value="submit" style="background-color: rgb(59, 155, 117); width: 30%;">
+                    <br><br>
+                </div>
+            </fieldset>
+        </form>
+            <br><br><br>
+            <script>
+               
+                document.getElementById('searchbutton').addEventListener('click', function() {
+                // let width = 0;
+                // function move(n) {
+                // const st = setInterval(move, 50);
+                // // document.getElementById('searchbutton').setAttribute('class', 'w3-hide')
+                // if (width === 100) {
+                //     x.innerHTML = "Completed";
+                //     clearInterval(st)
+                // }}
+               
+                // c.className = "spinner-border text-primary"
+                // c.style.width = '30px'
+                // c.style.backgroundColor = 'transparent'
+                // c.style.height = '30px'
+                // c.style.marginTop = '50px'
+                // c.style.marginLeft = '10px'
+               
+                
+                // document.getElementById('glass').addEventListener('click', function() { 
+                // document.getElementById('glass').innerHTML = document.getElementById('rollar');
+                   
+                // });
+            
+                
+                if (video) {
+                     window.location.href = '#video'
+                 }
+                // if (image){
+                
+                  })
+                //   document.getElementById()
+
+                function hello() {
+                let hello = confirm('are you sure you want to order now!')
+                if (hello === true) {
+                    window.location.href='#image'
+                } else {
+                    return;
+                }
+              }
+
+        //     function move1() {
+        //         const name = document.getElementById('text').value;
+        //         const anwar = document.getElementById('video').value
+               
+        //    document.getElementById('yusuf').innerHTML = name
+        //     if (name==anwar) {
+        //        // document.getElementById('video')
+        //         window.location.href = 'video'
+        //     }
+        //     }
+        //     var a = "I love javascript";
+        //     var b = a.search("love");
+        //     console.log(b)
+
+           
+             
+
+            //  function move1() {
+                 //let y = document.getElementById('move1')
+                //  let b = document.getElementById('number')
+                //  c = document.getElementById('move1').innerHTML = b
+                 //document.write(c)
+
+            // const x = document.getElementById(move1).innerHTML= document.getElementById(number);
+            // let width = 0;
+            // const st = setInterval(move, 50);
+            //  document.getElementById('min').setAttribute('class','w3-hide')
+            //}
+
+            // var a = " love javascript";
+                        
+               
+            </script>
+
+    <!-- // <div class="w3-container">
+    //     <h2>W3.CSS Modal</h2>
+    //     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+
+    //     <div id="id01" class="w3-modal">
+    //         <div class="w3-modal-content">
+    //             <div class="w3-container">
+    //                 <span id="place" onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+    //                 <p>Some text. Some text. Some text.</p>
+    //                 <p>Some text. Some text. Some text.</p>
+    //             </div>
+    //         </div>
+    //     </div>
+    // </div> -->
+</body>
+</html>
